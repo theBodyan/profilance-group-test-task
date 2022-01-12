@@ -14,5 +14,11 @@
 */
 
 $router->get('/', function () use ($router) {
+    return view('index');
+});
+
+$router->get('/api', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/api/short-link', 'LinkController@shortenLink');
