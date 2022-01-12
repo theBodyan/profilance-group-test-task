@@ -10,12 +10,12 @@ function shortenLink() {
             success: function (data) {
                 console.log(data);
                 wipePrevData();
-                displayNewLink(data.short_link);
+                displayResponse(data.short_link);
             },
             error: function (data) {
                 console.log(data);
                 wipePrevData();
-                displayNewLink(data.responseJSON.message);
+                displayResponse(data.responseJSON.message);
             }
         });
     }
@@ -26,7 +26,7 @@ function wipePrevData() {
     paragraph.innerText = "New link:";
 }
 
-function displayNewLink(link) {
+function displayResponse(response) {
     var paragraph = document.getElementById("new_link");
-    paragraph.innerText += " " + link;
+    paragraph.innerText += " " + response;
 }
