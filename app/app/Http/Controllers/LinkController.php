@@ -48,7 +48,7 @@ final class LinkController extends Controller
 
     private function getGroupGuid(): string
     {
-        $response = Http::withToken('7b020033fa490e5848c5baea304bdcfb233befd9')
+        $response = Http::withToken($this->getBitlyToken())
             ->get('https://api-ssl.bitly.com/v4/groups');
 
         $response->throw();
